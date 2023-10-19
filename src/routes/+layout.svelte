@@ -6,7 +6,7 @@
 
 	export let data: LayoutData;
 
-	let parsedData: Array<object> = d3.csvParse(data.data);
+	let parsedData = d3.csvParse(data.data, d3.autoType);
 
 	$: dataStore.set(parsedData);
 
