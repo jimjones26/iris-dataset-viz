@@ -23,10 +23,13 @@
 	const yValue = (item: IrisItem) => item.petal_width;
 
 	// x and y scales
-	const xScale = d3.scaleLinear().domain(<Iterable<number>>d3.extent($chartData, xValue));
-	const yScale = d3
+	const xScale = d3
 		.scaleLinear()
 		.domain(<Iterable<number>>d3.extent($chartData, xValue))
+		.range([0, innerWidth]);
+	const yScale = d3
+		.scaleLinear()
+		.domain(<Iterable<number>>d3.extent($chartData, yValue))
 		.range([0, innerHeight]);
 </script>
 
