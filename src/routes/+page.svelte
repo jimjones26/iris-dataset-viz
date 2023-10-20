@@ -22,6 +22,10 @@
 	const xValue = (item: IrisItem) => item.sepal_length;
 	const yValue = (item: IrisItem) => item.petal_width;
 
+	// x and y axis labels
+	const xAxisLabel = 'Sepal Length';
+	const yAxisLabel = 'Sepal Width';
+
 	// x and y scales
 	const xScale = d3
 		.scaleLinear()
@@ -37,6 +41,14 @@
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
 		<AxisBottom {xScale} {innerHeight} />
 		<AxisLeft {yScale} {innerWidth} />
-		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} /></g
-	>
+		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} />
+		<text
+			text-anchor="middle"
+			transform={`translate(${-50}, ${innerHeight / 2}) rotate(-90)`}
+			fill="#635F5D">{yAxisLabel}</text
+		>
+		<text x={innerWidth / 2} y={innerHeight + 40} text-anchor="middle" fill="#635F5D"
+			>{xAxisLabel}</text
+		>
+	</g>
 </svg>
