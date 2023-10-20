@@ -30,17 +30,19 @@
 	const xScale = d3
 		.scaleLinear()
 		.domain(<Iterable<number>>d3.extent($chartData, xValue))
-		.range([0, innerWidth]);
+		.range([0, innerWidth])
+		.nice();
 	const yScale = d3
 		.scaleLinear()
 		.domain(<Iterable<number>>d3.extent($chartData, yValue))
-		.range([0, innerHeight]);
+		.range([0, innerHeight])
+		.nice();
 </script>
 
 <svg {width} {height}>
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
-		<AxisBottom {xScale} {innerHeight} />
-		<AxisLeft {yScale} {innerWidth} />
+		<AxisBottom {xScale} {innerHeight} tickOffset={10} />
+		<AxisLeft {yScale} {innerWidth} tickOffset={10} />
 		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} />
 		<text
 			text-anchor="middle"
