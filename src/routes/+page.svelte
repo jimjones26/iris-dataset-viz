@@ -2,6 +2,7 @@
 	import { getContext } from 'svelte';
 	import * as d3 from 'd3';
 	import type { IrisItem } from '$lib/stores/iris-interface';
+	import Marks from '$lib/components/Marks.svelte';
 
 	// grab the chart data from the store
 	const chartData: any = getContext('csvData');
@@ -28,5 +29,7 @@
 </script>
 
 <svg {width} {height}>
-	<g transform={`translate(${margin.left}, ${margin.top})`} />
+	<g transform={`translate(${margin.left}, ${margin.top})`}>
+		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} /></g
+	>
 </svg>
