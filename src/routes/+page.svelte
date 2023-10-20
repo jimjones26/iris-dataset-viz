@@ -36,7 +36,7 @@
 <svg {width} {height}>
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
 		<AxisBottom {xScale} {innerHeight} />
-		<AxisLeft {yScale} />
+		<AxisLeft {yScale} {innerWidth} />
 		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} /></g
 	>
 </svg>
