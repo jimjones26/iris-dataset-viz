@@ -12,7 +12,7 @@
 	// width, height and margins for svg container
 	const width: number = 960;
 	const height: number = 500;
-	const margin = { top: 20, right: 30, bottom: 50, left: 220 };
+	const margin = { top: 20, right: 30, bottom: 50, left: 70 };
 
 	// inner height and width of chart
 	const innerHeight = height - margin.top - margin.bottom;
@@ -44,7 +44,7 @@
 		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} />
 		<text
 			text-anchor="middle"
-			transform={`translate(${-50}, ${innerHeight / 2}) rotate(-90)`}
+			transform={`translate(${-40}, ${innerHeight / 2}) rotate(-90)`}
 			fill="#635F5D">{yAxisLabel}</text
 		>
 		<text x={innerWidth / 2} y={innerHeight + 40} text-anchor="middle" fill="#635F5D"
