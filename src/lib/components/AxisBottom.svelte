@@ -6,7 +6,7 @@
 {#each xScale.ticks() as tick, i}
 	<g transform={`translate(${xScale(tick)}, 0)`}>
 		<line x1={0} y1={0} x2={0} y2={innerHeight} stroke="#C0C0BB" />
-		<text class="label" y={innerHeight + 3} style="text-anchor: middle;" dy={'.71em'}>text</text>
+		<text class="label" y={innerHeight + 3} style="text-anchor: middle;" dy={'.71em'}>{tick}</text>
 	</g>
 {/each}
 
