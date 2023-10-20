@@ -3,6 +3,8 @@
 	import * as d3 from 'd3';
 	import type { IrisItem } from '$lib/stores/iris-interface';
 	import Marks from '$lib/components/Marks.svelte';
+	import AxisBottom from '$lib/components/AxisBottom.svelte';
+	import AxisLeft from '$lib/components/AxisLeft.svelte';
 
 	// grab the chart data from the store
 	const chartData: any = getContext('csvData');
@@ -30,6 +32,8 @@
 
 <svg {width} {height}>
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
+		<AxisBottom {xScale} {innerHeight} />
+		<AxisLeft {yScale} />
 		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} /></g
 	>
 </svg>
