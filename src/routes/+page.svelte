@@ -43,7 +43,7 @@
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
 		<AxisBottom {xScale} {innerHeight} tickOffset={10} />
 		<AxisLeft {yScale} {innerWidth} tickOffset={10} />
-		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} />
+		<Marks data={$chartData} {xScale} {yScale} {yValue} {xValue} circleRadius={10} />
 		<text
 			text-anchor="middle"
 			transform={`translate(${-40}, ${innerHeight / 2}) rotate(-90)`}
