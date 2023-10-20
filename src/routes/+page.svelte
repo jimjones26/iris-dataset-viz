@@ -4,7 +4,7 @@
 	import type { IrisItem } from '$lib/stores/iris-interface';
 
 	// grab the chart data from the store
-	const chartData: Array<IrisItem> = getContext('csvData');
+	const chartData: any = getContext('csvData');
 
 	// width, height and margins for svg container
 	const width: number = 960;
@@ -20,8 +20,11 @@
 	const yValue = (item: IrisItem) => item.petal_width;
 
 	// x and y scales
-	const xScale = d3.scaleLinear().domain(d3.extent($chartData, xValue));
-	const yScale = d3.scaleLinear().domain(d3.extent($chartData, xValue)).range([0, innerHeight]);
+	const xScale = d3.scaleLinear().domain(<Iterable<number>>d3.extent($chartData, xValue));
+	const yScale = d3
+		.scaleLinear()
+		.domain(<Iterable<number>>d3.extent($chartData, xValue))
+		.range([0, innerHeight]);
 </script>
 
 <svg {width} {height}>
